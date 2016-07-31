@@ -4,7 +4,7 @@
         <item>Weight</item>
         <item>Speed</item>
         <item>Temperature</item>
-        <item>Distance</item>
+
     </string-array>
 
     <string-array name="unitWeight">
@@ -20,12 +20,5 @@
         <item>Celcius</item>
         <item>Fahrenheit</item>
     </string-array>
-    <string-array name="unitDistance">
-        <item>Centimeter</item>
-        <item>Inch</item>
-        <item>Feet</item>
-        <item>Yard</item>
-        <item>Kilometer</item>
-        <item>Mile</item>
-    </string-array>
+
 </resources>

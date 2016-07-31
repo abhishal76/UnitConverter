@@ -19,8 +19,11 @@ public class MainActivity extends AppCompatActivity {
     EditText getTextToConvert;
     Button convertThis;
     TextView display;
-     TemperatureConversion temperatureConversion;
+    TemperatureConversion temperatureConversion;
     WeightConversion weightConversion;
+    SpeedConversion speedConversion;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public void conversion(){
         temperatureConversion = new TemperatureConversion();
         weightConversion = new WeightConversion();
+        speedConversion = new SpeedConversion();
         getTextToConvert = (EditText) findViewById(R.id.editText);
         convertThis = (Button) findViewById(R.id.button);
         display = (TextView) findViewById(R.id.textView3);
@@ -39,17 +43,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String getNumber = getTextToConvert.getText().toString();
-                if (getNumber.equals("")){
+                if (getNumber.equals("")) {
                     Toast.makeText(getApplicationContext(), "Please enter number", Toast.LENGTH_SHORT).show();
-                }
-              else  if (baseSpinner.getSelectedItem().toString().equals("Temperature") ){
-              double ss = (temperatureConversion.convert(firstSpinner.getSelectedItem().toString(), secondSpinner.getSelectedItem().toString(), Double.parseDouble(getNumber)));
-                display.setText(String.format("%.2f",ss));
-            }
-                 else if (baseSpinner.getSelectedItem().toString().equals("Weight")){
+                } else if (baseSpinner.getSelectedItem().toString().equals("Temperature")) {
+                    double ss = (temperatureConversion.convert(firstSpinner.getSelectedItem().toString(), secondSpinner.getSelectedItem().toString(), Double.parseDouble(getNumber)));
+                    display.setText(String.format("%.2f", ss));
+                } else if (baseSpinner.getSelectedItem().toString().equals("Weight")) {
                     double weight = weightConversion.convert(firstSpinner.getSelectedItem().toString(), secondSpinner.getSelectedItem().toString(), Double.parseDouble(getNumber));
                     display.setText(String.format("%.2f", weight));
-                }
+                } else if (baseSpinner.getSelectedItem().toString().equals("Speed")){
+                    double speed = speedConversion.convertSpeed(firstSpinner.getSelectedItem().toString(), secondSpinner.getSelectedItem().toString(), Double.parseDouble(getNumber));
+                display.setText(String.format("%.2f", speed));
+            }
             }
         });
     }
@@ -99,13 +104,6 @@ public class MainActivity extends AppCompatActivity {
                             firstSpinner.setAdapter(adapter1);
                             secondSpinner.setAdapter(adapter1);
                             break;
-                        case 3:
-                            arraySpinner = getResources().getStringArray(R.array.unitDistance);
-                            firstSpinner = (Spinner) findViewById(R.id.spinner1);
-                            secondSpinner = (Spinner) findViewById(R.id.spinner2);
-                            adapter1 = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, arraySpinner);
-                            firstSpinner.setAdapter(adapter1);
-                            secondSpinner.setAdapter(adapter1);
                     }
                 }
 
