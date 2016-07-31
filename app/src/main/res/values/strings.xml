@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">MyConverter</string>
+    <string-array name="base_selection">
+        <item>Weight</item>
+        <item>Speed</item>
+        <item>Temperature</item>
+        <item>Distance</item>
+    </string-array>
+
+    <string-array name="unitWeight">
+        <item>Gram</item>
+        <item>Kilogram</item>
+        <item>Pound</item>
+    </string-array>
+    <string-array name="unitSpeed">
+        <item>km/h</item>
+        <item>mile/h</item>
+    </string-array>
+    <string-array name="unitsTemperature">
+        <item>Celcius</item>
+        <item>Fahrenheit</item>
+    </string-array>
+    <string-array name="unitDistance">
+        <item>Centimeter</item>
+        <item>Inch</item>
+        <item>Feet</item>
+        <item>Yard</item>
+        <item>Kilometer</item>
+        <item>Mile</item>
+    </string-array>
+</resources>
